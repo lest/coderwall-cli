@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+begin
+  require 'coderwall/command'
+rescue LoadError
+  coderwall_path = File.expand_path('../../lib', __FILE__)
+  $:.unshift(coderwall_path) if File.directory?(coderwall_path) && !$:.include?(coderwall_path)
+  require 'coderwall/command'
+end
