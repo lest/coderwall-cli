@@ -9,7 +9,7 @@ unless username
   exit 1
 end
 
-url = URI.escape("http://coderwall.com/#{username}.json")
+url = URI.escape("https://coderwall.com/#{username}.json")
 begin
   response = JSON.load(open(url))
   puts "Achievements:"
